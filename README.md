@@ -22,11 +22,11 @@ The rapid advancement of multimodal large language models (MLLMs) has profoundly
 
 Performance of various open-source and closed-source models on GDI-Bench at different levels of reasoning complexity. The GDI-Model is fine-tuned based on the InternVL3-8B model.
 
-![multi_subplot_analysis_alpha](.\image\multi_subplot_analysis_alpha.png)
+![multi_subplot_analysis_alpha](https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/multi_subplot_analysis_alpha.png)
 
 The performance of different open-source and closed-source large models and different training methods on GDI-Bench.
 
-![GDI-bench](.\image\GDI-bench.jpg)
+![GDI-bench](https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/GDI-bench.jpg)
 
 ## Citation
 
