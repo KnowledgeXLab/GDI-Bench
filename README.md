@@ -7,7 +7,7 @@
 
 <div align="center">
 <p align="center">
-💜 <a href="https://knowledgexlab.github.io/gdibench.github.io/"><b>HomePage</b></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/datasets/GDIBench">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/pdf/2505.00063">Paper</a>&nbsp&nbsp
+💜 <a href="https://knowledgexlab.github.io/gdibench.github.io/"><b>HomePage</b></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/GDIBench">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="https://arxiv.org/pdf/2505.00063">Paper</a>&nbsp&nbsp
 </p>
 
 </div>
