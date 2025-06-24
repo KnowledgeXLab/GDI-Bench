@@ -98,7 +98,7 @@ docker run --rm --gpus device=0 \
 | **Handwritten Answer Parsing** | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Handwritten%20Answer%20Parsing.png" width="200"> | `"Extract question 15 from Problem-solving Questions to markdown format"` |
 | **Author Metadata Extraction** | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Author%20Metadata%20Extraction.png" width="200"> | `"Convert author metadata to JSON: {"Author Information": [{"Name": "...", "Affiliation": "...", "Role": "First Author/Corresponding Author/Author"}]}"` |
 | **Reference Extraction**       | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/bibtex.jpg" width="200"> | `"Extract all references on this page and output in BibTeX format"` |
-| **Table Extraction**           | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/exm1_table_inf.png"> | `"Extract the table in this image, convert to LaTeX code"`   |
+| **Table Extraction**           | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/exm1_table_inf.png" width="200"> | `"Extract the table in this image, convert to LaTeX code"`   |
 
 
 
