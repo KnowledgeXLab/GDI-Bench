@@ -79,26 +79,36 @@ python param_mask_layer.py \
 # Step 1: Pull the pre-built image
 docker pull yxizhong/gdi:latest
 
-# Step 2: Run inference (map custom paths + GPU enabled)
-docker run --rm --gpus device=0 \
-  -v /path/to/your/models:/app/my_model \
-  -v /path/to/your/images:/app/my_images \
+# Step 2: Download pre-trained model from HuggingFace
+git lfs install
+git clone https://huggingface.co/GDIBench/GDI-Model/ /app/my_model
+
+# Step 3: Start interactive Docker container
+docker run -it --rm --gpus device=0 \
+  -v /path/to/my_model:/app/my_model \
+  -v /path/to/my_images:/app/my_images \
   yxizhong/gdi:latest \
-  python GDI_inference.py \
-    --model_dir /app/my_model \
-    --image_dir /app/my_images \
-    --prompt "your_custom_prompt_here"
+  /bin/bash
+  
+# Step 4: Activate the Python environment
+conda activate gdi
+
+# Step 5: Execute inference command
+python GDI_inference.py \
+  --model_dir /app/my_model \
+  --image_dir /app/my_images \
+  --prompt "your custom prompt here"
 ```
 
 ### 2. Prompt Examples
 
 | **Task Type**                  | Image Example                                                | **Prompt Example**                                           |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Exam Analysis**              | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Exam%20Analysis.png" width="200"> | `"Generate JSON from Problem-solving Questions question 13 with keys: 题号 (number), 题目 (question), 答案 (answer)"` |
-| **Handwritten Answer Parsing** | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Handwritten%20Answer%20Parsing.png" width="200"> | `"Extract question 15 from Problem-solving Questions to markdown format"` |
-| **Author Metadata Extraction** | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Author%20Metadata%20Extraction.png" width="200"> | `"Convert author metadata to JSON: {"Author Information": [{"Name": "...", "Affiliation": "...", "Role": "First Author/Corresponding Author/Author"}]}"` |
-| **Reference Extraction**       | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/bibtex.jpg" width="200"> | `"Extract all references on this page and output in BibTeX format"` |
-| **Table Extraction**           | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/exm1_table_inf.png" width="200"> | `"Extract the table in this image, convert to LaTeX code"`   |
+| **Exam Analysis**              | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Exam%20Analysis.png" width="200"> <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/exam2.png" width="200"> | `"Generate JSON from Problem-solving Questions question 13 with keys: 题号 (number), 题目 (question), 答案 (answer)"` |
+| **Handwritten Answer Parsing** | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Handwritten%20Answer%20Parsing.png" width="200"> <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/handwrite2.jpg" width="200">| `"Extract question 15 from Problem-solving Questions to markdown format"` |
+| **Author Metadata Extraction** | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/Author%20Metadata%20Extraction.png" width="200"> <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/author2.jpg" width="200">| `"Convert author metadata to JSON: {"Author Information": [{"Name": "...", "Affiliation": "...", "Role": "First Author/Corresponding Author/Author"}]}"` |
+| **Reference Extraction**       | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/bibtex.jpg" width="200"> <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/bibtex2.jpg" width="200">| `"Extract all references on this page and output in BibTeX format"` |
+| **Table Extraction**           | <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/exm1_table_inf.png" width="200"> <img src="https://github.com/KnowledgeXLab/GDI-Bench/blob/main/image/table2.jpg" width="200">| `"Extract the table in this image, convert to LaTeX code"`   |
 
 
 
